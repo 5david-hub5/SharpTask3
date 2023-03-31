@@ -27,6 +27,22 @@ namespace task3
     
             public string GetTitle()
             {
+                if (!string.IsNullOrEmpty(Title))
+                {
+                    return Title;
+                }
+                
+                string[] lines = GetText().Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
+                
+                foreach (string line in lines)
+                {
+                    if (!string.IsNullOrWhiteSpace(line) && line == line.ToUpper())
+                    {
+                        Title = line;
+                        break;
+                    }
+                }
+                
                 return Title;
             }
         }

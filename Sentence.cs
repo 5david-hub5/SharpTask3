@@ -22,7 +22,7 @@ namespace task3
             foreach (Word word in words)
             {
                 sb.Append(word.GetText());
-                sb.Append(" ");
+                sb.Append("");
             }
             sb.Append(". ");
             return sb.ToString();
